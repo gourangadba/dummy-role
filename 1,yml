@@ -1,0 +1,10 @@
+---
+- name: update db server
+  hosts: web
+  become: true
+  tasks:
+    - name: Install apache httpd
+      ansible.builtin.apt:
+        name: apache2
+        state: absent
+        update_cache: yes
